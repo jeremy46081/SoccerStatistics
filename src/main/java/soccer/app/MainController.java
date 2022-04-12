@@ -207,6 +207,39 @@ public class MainController {
 
     }
 
+    @FXML
+    void addFouls(ActionEvent event) {
+        if (foulsPlayer.getText()!="") {
+            listoffouls.add(foulsPlayer.getText());
+            leftStatus.setText("Foul added!");
+            rightStatus.setText(null);
+        }
+        else{
+            rightStatus.setText("Player name not inputted!");
+            rightStatus.setTextFill(Color.RED);
+            leftStatus.setText(null);
 
 
+        }
+
+    }
+
+    @FXML
+    void showFouls(ActionEvent event) {
+        if (foulsPlayerName.getText()!=""){
+            String a=fouls.number_of_fouls(listoffouls,foulsPlayerName.getText());
+            Details.setText(a);
+            leftStatus.setText("Fouls shown!");
+            rightStatus.setText(null);
+        }
+        else{
+            rightStatus.setText("Player name not inputted!");
+            rightStatus.setTextFill(Color.RED);
+            leftStatus.setText(null);
+        }
+
+
+
+
+    }
 }

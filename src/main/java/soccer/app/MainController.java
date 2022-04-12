@@ -211,7 +211,7 @@ public class MainController {
 
             min.add(pTeam1.getText());
             min.add(pTeam2.getText());
-            System.out.println(teams);
+
             Details.appendText(team.possession_percentage(teams, min, Teamposssession.getText()));
             leftStatus.setText("Possession percentage displayed!");
             rightStatus.setText(null);
@@ -388,7 +388,7 @@ public class MainController {
             String a = null;
 
             for (String i:listofplayers1) {
-                System.out.println(i);
+
                 if (Objects.equals(i.substring(0, i.length() - 3), removePlayerName.getText())) {
                     a=i;
                 }
@@ -399,7 +399,7 @@ public class MainController {
         } else if (Objects.equals(removePlayerTeam.getText(), team2.getText())) {
             String b=null;
             for (String k : listofplayers2) {
-                System.out.println(k);
+
                 if (Objects.equals(k.substring(0,k.length()-3), removePlayerName.getText())) {
                     b=k;
                 }

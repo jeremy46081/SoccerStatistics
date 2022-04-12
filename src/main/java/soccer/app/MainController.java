@@ -149,5 +149,22 @@ public class MainController {
 
     }
 
+    @FXML
+    void saveFile(ActionEvent event) throws IOException {
+        final FileChooser fileChooser = new FileChooser();
+        fileChooser.setInitialDirectory(new File("."));
+        File fileSave = fileChooser.showSaveDialog(new Stage());
+        PrintWriter Writer = new PrintWriter(fileSave+".txt", StandardCharsets.UTF_8);
+        String a = String.join(",",teams);
+        Writer.println(a);
+        Writer.println(String.join(",",listofplayers1));
+        Writer.println(String.join(",",listofplayers2));
+        Writer.println(String.join(",",listofgoals));
+        Writer.println(String.join(",",listoffouls));
+        Writer.println(String.join(",",min));
+        Writer.close();
+        rightStatus.setText("File saved!");
+    }
+
 
 }

@@ -376,5 +376,5 @@ public class MainController {
     @FXML
     void quitProgram(ActionEvent event) {
         exit();
-    }}
+    }
 }

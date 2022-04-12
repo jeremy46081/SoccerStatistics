@@ -274,4 +274,64 @@ public class MainController {
 
 
     }
+
+    @FXML
+    void addPlayer(ActionEvent event) {
+        if (PlayerTeam.getText()!="" && PlayerName.getText()!=""){
+            if (Objects.equals(PlayerTeam.getText(), team1.getText()) || Objects.equals(PlayerTeam.getText(), team2.getText())){
+                if (Objects.equals(PlayerTeam.getText(), team1.getText())){
+                    listofplayers1.add(PlayerName.getText()+playerPosition.getValue());
+                }
+                else {
+                    listofplayers2.add(PlayerName.getText()+playerPosition.getValue());
+                }
+                leftStatus.setText("Player added!");
+                rightStatus.setText(null);
+
+            }
+            else{
+                rightStatus.setText("Team information incorrect!");
+                rightStatus.setTextFill(Color.RED);
+                leftStatus.setText(null);
+            }
+
+
+        }
+        else{
+            rightStatus.setText("Player information not inputted!");
+            rightStatus.setTextFill(Color.RED);
+            leftStatus.setText(null);
+        }
+
+    }
+
+    @FXML
+    void viewPlayers(ActionEvent event){
+        if (!Objects.equals(allPlayersTeam.getText(), "")){
+            if(Objects.equals(allPlayersTeam.getText(), team1.getText()) || Objects.equals(allPlayersTeam.getText(), team2.getText())){
+                allplayers.add(listofplayers1);
+                allplayers.add(listofplayers2);
+                String tname = allPlayersTeam.getText();
+                Details.setText(play.players(allplayers, teams, tname));
+                leftStatus.setText("Players Shown!");
+                rightStatus.setText(null);
+            }
+            else{
+                rightStatus.setText("Team does not exist!");
+                rightStatus.setTextFill(Color.RED);
+                leftStatus.setText(null);
+            }
+
+
+        }
+        else{
+            rightStatus.setText("Team not inputted!");
+            rightStatus.setTextFill(Color.RED);
+            leftStatus.setText(null);
+        }
+
+
+
+
+    }
 }

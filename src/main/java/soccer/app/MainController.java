@@ -84,7 +84,8 @@ public class MainController {
     private Label rightStatus;
 
 
-    ObservableList<String> positionlist = FXCollections.observableArrayList("GKP", "DEF", "MID", "ATK");
+
+    ObservableList<String> positionlist= FXCollections.observableArrayList("GKP","DEF","MID","ATK");
 
 
     /**
@@ -96,24 +97,57 @@ public class MainController {
 
         playerPosition.setItems(positionlist);
     }
-
     ArrayList<String> teams = new ArrayList<>();
     Teams team = new Teams();
     PlayerStats fouls = new PlayerStats();
     PlayerStats goals = new PlayerStats();
-    ArrayList<String> listoffouls = new ArrayList<>();
-    ArrayList<String> listofgoals = new ArrayList<>();
+    ArrayList<String> listoffouls= new ArrayList<>();
+    ArrayList<String> listofgoals= new ArrayList<>();
     ArrayList<String> min = new ArrayList<String>();
     Players play = new Players();
     ArrayList<String> listofplayers1 = new ArrayList<>();
     ArrayList<String> listofplayers2 = new ArrayList<>();
     ArrayList<ArrayList<String>> allplayers = new ArrayList<>();
-    Reader reader = new Reader();
+    Reader reader= new Reader();
 
 
     @FXML
     void aboutstats(ActionEvent event) {
-        Alert about = new Alert(Alert.AlertType.INFORMATION, "Author: Jessica Thomas & Jeremy Thomas\n" + "Email: jessica.thomas1@ucalgary.ca\t jeremy.thomas1@ucalgary.ca\n" + "Version: v1.0\n" + "This is a program for viewing the statistics of a soccer game.\n");
+        Alert about=new Alert(Alert.AlertType.INFORMATION,"Author: Jessica Thomas & Jeremy Thomas\n"+"Email: jessica.thomas1@ucalgary.ca\t jeremy.thomas1@ucalgary.ca\n"+"Version: v1.0\n"+"This is a program for viewing the statistics of a soccer game.\n");
         about.show();
     }
+
+    @FXML
+    void loadFile(ActionEvent event) {
+        final FileChooser fileChooser = new FileChooser();
+        fileChooser.setInitialDirectory(new File("."));
+        File fileload=fileChooser.showOpenDialog(new Stage());
+        teams=(reader.team(fileload));
+        for (String i:(reader.stats(fileload,6))){
+            listoffouls.add(i.substring(0,i.length()-3));
+        }
+        for (String k:(reader.stats(fileload,4))){
+            listofgoals.add(k.substring(0,k.length()-3));
+        }
+        for (String a:(reader.players(fileload)).get(0)){
+
+                listofplayers1.add(a);
+        }
+        for (String b:(reader.players(fileload)).get(1)){
+
+            listofplayers2.add(b);
+        }
+        allplayers.add(listofplayers1);
+        allplayers.add(listofplayers2);
+        team1.setText(teams.get(0));
+        team2.setText(teams.get(1));
+
+        min=(reader.possession(fileload));
+        pTeam1.setText(min.get(0));
+        pTeam2.setText(min.get(1));
+        rightStatus.setText("File loaded!");
+
+    }
+
+
 }

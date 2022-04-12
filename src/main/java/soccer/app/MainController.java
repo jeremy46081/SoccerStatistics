@@ -334,4 +334,47 @@ public class MainController {
 
 
     }
+
+
+    @FXML
+    void removePlayer(ActionEvent event){
+
+        if (Objects.equals(removePlayerTeam.getText(), team1.getText())){
+            String a = null;
+
+            for (String i:listofplayers1) {
+                System.out.println(i);
+                if (Objects.equals(i.substring(0, i.length() - 3), removePlayerName.getText())) {
+                    a=i;
+                }
+            }
+            listofplayers1.remove(a);
+            leftStatus.setText("Player Removed!");
+            rightStatus.setText(null);
+        } else if (Objects.equals(removePlayerTeam.getText(), team2.getText())) {
+            String b=null;
+            for (String k : listofplayers2) {
+                System.out.println(k);
+                if (Objects.equals(k.substring(0,k.length()-3), removePlayerName.getText())) {
+                    b=k;
+                }
+
+            }
+            listofplayers2.remove(b);
+            leftStatus.setText("Player Removed!");
+            rightStatus.setText(null);
+
+        }
+        else{
+            rightStatus.setText("Team does not exist!");
+            rightStatus.setTextFill(Color.RED);
+            leftStatus.setText(null);
+        }
+        Details.setText(null);
+    }
+
+    @FXML
+    void quitProgram(ActionEvent event) {
+        exit();
+    }}
 }

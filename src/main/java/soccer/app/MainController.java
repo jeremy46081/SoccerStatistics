@@ -1,7 +1,5 @@
 package soccer.app;
 
-
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -29,63 +27,62 @@ public class MainController {
 
 
     @FXML
-    private TextArea Details;
+    private TextArea Details; //Show details & statistics that is asked by the user
 
 
     @FXML
-    private TextField PlayerName;
+    private TextField PlayerName; //Stores the name of the player
 
     @FXML
-    private TextField PlayerTeam;
+    private TextField PlayerTeam; //Stores the name of the team the player is in
 
     @FXML
-    private TextField Teamposssession;
-
-
-    @FXML
-    private TextField allPlayersTeam;
-
-    @FXML
-    private TextField foulsPlayer;
-
-    @FXML
-    private TextField foulsPlayerName;
-
-    @FXML
-    private TextField goalsPlayer;
+    private TextField Teamposssession; //User inputs the team which they want to view the possession percentage of
 
 
     @FXML
-    private TextField pTeam1;
+    private TextField allPlayersTeam; //User inputs the team which they want to view all the players of
 
     @FXML
-    private TextField pTeam2;
+    private TextField foulsPlayer; //User adds a player which commited a foul
 
     @FXML
-    private ChoiceBox<String> playerPosition;
+    private TextField foulsPlayerName; //User inputs the player of which they want to see the no. of fouls committed
+
+    @FXML
+    private TextField goalsPlayer; //User adds a player which scored a goal
+
+    @FXML
+    private TextField pTeam1; //Stores no. of minutes the 1st team had the ball
+
+    @FXML
+    private TextField pTeam2; //Stores no. of minutes the 2nd team had the ball
+
+    @FXML
+    private ChoiceBox<String> playerPosition; //Choice box containing different positions a player can have
 
 
     @FXML
-    private TextField removePlayerName;
+    private TextField removePlayerName; //Stores name of the player the user wants to remove
 
     @FXML
-    private TextField removePlayerTeam;
+    private TextField removePlayerTeam; //Stores team of the player the user wants to remove
 
     @FXML
-    private TextField team1;
+    private TextField team1; //Stores the name of 1st team
 
     @FXML
-    private TextField team2;
+    private TextField team2;  //Stores the name of 2nd team
 
     @FXML
-    private Label leftStatus;
+    private Label leftStatus;  //Outputs current status of the program
 
     @FXML
-    private Label rightStatus;
+    private Label rightStatus; //Outputs errors and issues caused by the user
 
 
 
-    ObservableList<String> positionlist= FXCollections.observableArrayList("GKP","DEF","MID","ATK");
+    ObservableList<String> positionlist= FXCollections.observableArrayList("GKP","DEF","MID","ATK"); //Collection of player positions in the choice box
 
 
     /**
@@ -111,12 +108,20 @@ public class MainController {
     Reader reader= new Reader();
 
 
+    /**
+     * Alerts with info about the program
+     * @param event
+     */
     @FXML
     void aboutstats(ActionEvent event) {
         Alert about=new Alert(Alert.AlertType.INFORMATION,"Author: Jessica Thomas & Jeremy Thomas\n"+"Email: jessica.thomas1@ucalgary.ca\t jeremy.thomas1@ucalgary.ca\n"+"Version: v1.0\n"+"This is a program for viewing the statistics of a soccer game.\n");
         about.show();
     }
 
+    /**
+     * Loads an already existing file
+     * @param event
+     */
     @FXML
     void loadFile(ActionEvent event) {
         final FileChooser fileChooser = new FileChooser();
@@ -149,6 +154,11 @@ public class MainController {
 
     }
 
+    /**
+     * Saves the world as a txt file
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void saveFile(ActionEvent event) throws IOException {
         final FileChooser fileChooser = new FileChooser();
@@ -166,6 +176,10 @@ public class MainController {
         rightStatus.setText("File saved!");
     }
 
+    /**
+     * Creates an arraylist of team names and displays it
+     * @param event
+     */
     @FXML
     void addTeamName(ActionEvent event) {
 
@@ -187,6 +201,10 @@ public class MainController {
 
     }
 
+    /**
+     * Displays possession percentage of a team during the game
+     * @param event
+     */
     @FXML
     void possesionpercent(ActionEvent event) {
         if (Teamposssession.getText()!="") {
@@ -207,6 +225,10 @@ public class MainController {
 
     }
 
+    /**
+     * Creates an arraylist of players who committed a foul
+     * @param event
+     */
     @FXML
     void addFouls(ActionEvent event) {
         if (foulsPlayer.getText()!="") {
@@ -224,6 +246,10 @@ public class MainController {
 
     }
 
+    /**
+     * Displays number of fouls committed by a player
+     * @param event
+     */
     @FXML
     void showFouls(ActionEvent event) {
         if (foulsPlayerName.getText()!=""){
@@ -238,10 +264,12 @@ public class MainController {
             leftStatus.setText(null);
         }
 
-
-
-
     }
+
+    /**
+     * Creates an arraylist of players who scored a goal
+     * @param event
+     */
     @FXML
     void addGoals(ActionEvent event) {
         if (goalsPlayer.getText()!=""){
@@ -258,6 +286,10 @@ public class MainController {
 
     }
 
+    /**
+     * Displays the player who scored the highest number of goals in the game
+     * @param event
+     */
     @FXML
     void showGoals(ActionEvent event) {
         if (listofgoals!=null){
@@ -275,6 +307,10 @@ public class MainController {
 
     }
 
+    /**
+     * Adds players along with their information to an arraylist of players
+     * @param event
+     */
     @FXML
     void addPlayer(ActionEvent event) {
         if (PlayerTeam.getText()!="" && PlayerName.getText()!=""){
@@ -305,6 +341,10 @@ public class MainController {
 
     }
 
+    /**
+     * views all players of a team specified by the user
+     * @param event
+     */
     @FXML
     void viewPlayers(ActionEvent event){
         if (!Objects.equals(allPlayersTeam.getText(), "")){
@@ -334,6 +374,11 @@ public class MainController {
 
 
     }
+
+    /**
+     * Removes a player from a team which are both chosen by the user
+     * @param event
+     */
 
 
     @FXML
@@ -373,6 +418,10 @@ public class MainController {
         Details.setText(null);
     }
 
+    /**
+     * exits from the program
+     * @param event
+     */
     @FXML
     void quitProgram(ActionEvent event) {
         exit();

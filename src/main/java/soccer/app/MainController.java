@@ -242,4 +242,36 @@ public class MainController {
 
 
     }
+    @FXML
+    void addGoals(ActionEvent event) {
+        if (goalsPlayer.getText()!=""){
+            listofgoals.add(goalsPlayer.getText());
+            leftStatus.setText("Goal added!");
+            rightStatus.setText(null);
+
+        }
+        else{
+            rightStatus.setText("Player name not inputted!");
+            rightStatus.setTextFill(Color.RED);
+            leftStatus.setText(null);
+        }
+
+    }
+
+    @FXML
+    void showGoals(ActionEvent event) {
+        if (listofgoals!=null){
+            String b=goals.highest_goal_scorer(listofgoals);
+            Details.setText(b);
+            leftStatus.setText("Goals shown!");
+            rightStatus.setText(null);
+        }
+        else{
+            rightStatus.setText("No goals have been scored!");
+            rightStatus.setTextFill(Color.RED);
+            leftStatus.setText(null);
+        }
+
+
+    }
 }

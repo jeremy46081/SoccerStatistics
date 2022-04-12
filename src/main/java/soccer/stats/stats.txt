@@ -1,0 +1,6 @@
+FC BARCELONA,REAL MADRID
+Ter StegenGKP,AraujoDEF,PiqueDEF,GarciaDEF,AlbaDEF,BusquetsMID,De JongMID,PedriMID,Ferran TorresATK,AubameyangATK,DembeleATK
+CourtoisGKP,CarvajalDEF,AlabaDEF,MilitaoDEF,NachoDEF,KroosMID,CasemiroMID,ModricMID,Fede ValverdeATK,BenzemaATK,ViniciusATK
+AubameyangATK,AraujoDEF,Ferran TorresATK,AubameyangATK,BenzemaATK
+NachoDEF,AlbaDEF,ModricMID,De JongMID
+54,36

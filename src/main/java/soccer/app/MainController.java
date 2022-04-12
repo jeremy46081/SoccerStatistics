@@ -166,5 +166,47 @@ public class MainController {
         rightStatus.setText("File saved!");
     }
 
+    @FXML
+    void addTeamName(ActionEvent event) {
+
+        if (team1.getText()!="" && team2.getText()!="" && pTeam1.getText()!="" && pTeam2.getText()!=""){
+            teams.add(team1.getText());
+            teams.add(team2.getText());
+            String t = team.teamname(teams);
+            Details.setText(teams.get(0)+"\n"+teams.get(1));
+            leftStatus.setText("Teams added!");
+            rightStatus.setText(null);
+        }
+        else{
+
+            rightStatus.setText("Team info not inputted!");
+            rightStatus.setTextFill(Color.RED);
+            leftStatus.setText(null);
+
+        }
+
+    }
+
+    @FXML
+    void possesionpercent(ActionEvent event) {
+        if (Teamposssession.getText()!="") {
+
+            min.add(pTeam1.getText());
+            min.add(pTeam2.getText());
+            System.out.println(teams);
+            Details.appendText(team.possession_percentage(teams, min, Teamposssession.getText()));
+            leftStatus.setText("Possession percentage displayed!");
+            rightStatus.setText(null);
+        }
+        else{
+            rightStatus.setText("Team name not inputted!");
+            rightStatus.setTextFill(Color.RED);
+            leftStatus.setText(null);
+
+        }
+
+    }
+
+
 
 }

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="soccer.app.MainController">
+    <children>
+        <MenuBar VBox.vgrow="NEVER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="save" mnemonicParsing="false" onAction="#saveFile" text="Save File" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="load" mnemonicParsing="false" onAction="#loadFile" text="Load File" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="quit" mnemonicParsing="false" onAction="#quitProgram" text="Quit" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem fx:id="about" mnemonicParsing="false" onAction="#aboutstats" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <SplitPane dividerPositions="0.5667853962600178" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+            <items>
+                <AnchorPane prefHeight="551.0" prefWidth="800.0">
+                    <children>
+                        <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" minWidth="60.0" prefHeight="22.0" prefWidth="86.0" style="&#10;" text="Add Teams" textAlignment="CENTER" wrapText="false">
+                            <font>
+                                <Font size="15.0" fx:id="x1" />
+                            </font>
+                        </Label>
+                  <Label alignment="CENTER" layoutX="19.0" layoutY="44.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Team Names" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+                     <font>
+                        <Font size="15.0" fx:id="x11" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="addTeam" layoutX="133.0" layoutY="19.0" mnemonicParsing="false" onAction="#addTeamName" />
+                  <Label alignment="CENTER" layoutX="14.0" layoutY="107.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Add Player" textAlignment="CENTER" wrapText="false">
+                     <font>
+                        <Font size="15.0" fx:id="x12" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="Player" layoutX="133.0" layoutY="112.0" mnemonicParsing="false" onAction="#addPlayer" />
+                  <Label alignment="CENTER" layoutX="32.0" layoutY="146.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Name" textAlignment="CENTER" wrapText="false">
+                     <font>
+                        <Font size="15.0" fx:id="x111" />
+                     </font>
+                     <textFill>
+                        <Color red="0.624" green="0.624" blue="0.624" fx:id="x211" />
+                     </textFill>
+                  </Label>
+                  <TextField fx:id="PlayerName" layoutX="98.0" layoutY="144.0" />
+                  <Label alignment="CENTER" layoutX="32.0" layoutY="182.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Team" textAlignment="CENTER" wrapText="false">
+                     <font>
+                        <Font size="15.0" fx:id="x1111" />
+                     </font>
+                     <textFill>
+                        <Color red="0.624" green="0.624" blue="0.624" fx:id="x2111" />
+                     </textFill>
+                  </Label>
+                  <TextField fx:id="PlayerTeam" layoutX="98.0" layoutY="180.0" />
+                  <Label alignment="CENTER" layoutX="32.0" layoutY="215.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Position" textAlignment="CENTER" wrapText="false">
+                     <font>
+                        <Font size="15.0" fx:id="x11111" />
+                     </font>
+                     <textFill>
+                        <Color red="0.624" green="0.624" blue="0.624" fx:id="x21111" />
+                     </textFill>
+                  </Label>
+                  <ChoiceBox fx:id="playerPosition" layoutX="98.0" layoutY="213.0" prefWidth="150.0" />
+                  <Label alignment="CENTER" layoutX="25.0" layoutY="262.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Stats" textAlignment="CENTER" wrapText="false">
+                     <font>
+                        <Font size="15.0" fx:id="x121" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="34.0" layoutY="302.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Top Goalscorer" textAlignment="CENTER" wrapText="false">
+                     <font>
+                        <Font size="15.0" fx:id="x1211" />
+                     </font>
+                     <textFill>
+                        <Color red="0.624" green="0.624" blue="0.624" fx:id="x2211" />
+                     </textFill>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="34.0" layoutY="342.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Possession Percentage" textAlignment="CENTER" wrapText="false">
+                     <font>
+                        <Font size="15.0" fx:id="x12111" />
+                     </font>
+                     <textFill>
+                        <Color red="0.624" green="0.624" blue="0.624" fx:id="x22111" />
+                     </textFill>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="34.0" layoutY="376.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="No. of Fouls" textAlignment="CENTER" wrapText="false">
+                     <font>
+                        <Font size="15.0" fx:id="x121111" />
+                     </font>
+                     <textFill>
+                        <Color red="0.624" green="0.624" blue="0.624" fx:id="x221111" />
+                     </textFill>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="34.0" layoutY="417.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="View all Players of a Team" textAlignment="CENTER" wrapText="false">
+                     <font>
+                        <Font size="15.0" fx:id="x1211111" />
+                     </font>
+                     <textFill>
+                        <Color red="0.624" green="0.624" blue="0.624" fx:id="x2211111" />
+                     </textFill>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="34.0" layoutY="468.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Remove Player " textAlignment="CENTER" wrapText="false">
+                     <font>
+                        <Font size="15.0" fx:id="x1211112" />
+                     </font>
+                     <textFill>
+                        <Color red="0.624" green="0.624" blue="0.624" fx:id="x2211112" />
+                     </textFill>
+                  </Label>
+                  <Label layoutX="13.0" layoutY="74.0" text="Posession minutes" textFill="#9f9f9f">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="280.0" layoutY="118.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Add Fouls" textAlignment="CENTER" wrapText="false">
+                     <font>
+                        <Font size="15.0" fx:id="x122" />
+                     </font>
+                     <textFill>
+                        <Color red="0.624" green="0.624" blue="0.624" fx:id="x222" />
+                     </textFill>
+                  </Label>
+                  <RadioButton fx:id="Fouls" layoutX="374.0" layoutY="121.0" mnemonicParsing="false" onAction="#addFouls" />
+                  <Label alignment="CENTER" layoutX="280.0" layoutY="182.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Add Goals" textAlignment="CENTER" wrapText="false">
+                     <font>
+                        <Font size="15.0" fx:id="x1221" />
+                     </font>
+                     <textFill>
+                        <Color red="0.624" green="0.624" blue="0.624" fx:id="x2221" />
+                     </textFill>
+                  </Label>
+                  <RadioButton fx:id="addGoal" layoutX="374.0" layoutY="184.0" mnemonicParsing="false" onAction="#addGoals" />
+                  <TextField fx:id="team1" layoutX="149.0" layoutY="42.0" prefHeight="26.0" prefWidth="124.0" promptText="Enter Team 1" />
+                  <TextField fx:id="team2" layoutX="328.0" layoutY="42.0" prefHeight="26.0" prefWidth="124.0" promptText="Enter Team 2" />
+                  <TextField fx:id="pTeam1" layoutX="149.0" layoutY="71.0" prefHeight="26.0" prefWidth="124.0" promptText="Enter Team 1" />
+                  <TextField fx:id="pTeam2" layoutX="328.0" layoutY="71.0" prefHeight="26.0" prefWidth="124.0" promptText="Enter Team 2" />
+                  <TextField fx:id="foulsPlayer" layoutX="279.0" layoutY="143.0" prefHeight="26.0" prefWidth="150.0" promptText="Enter Player Name" />
+                  <TextField fx:id="goalsPlayer" layoutX="279.0" layoutY="212.0" prefHeight="26.0" prefWidth="150.0" promptText="Enter Player Name" />
+                  <TextField fx:id="Teamposssession" layoutX="239.0" layoutY="339.0" prefHeight="26.0" prefWidth="150.0" promptText="Enter Team Name" />
+                  <TextField fx:id="foulsPlayerName" layoutX="204.0" layoutY="373.0" prefHeight="26.0" prefWidth="150.0" promptText="Enter Player Name" />
+                  <TextField fx:id="allPlayersTeam" layoutX="253.0" layoutY="414.0" prefHeight="26.0" prefWidth="150.0" promptText="Enter Team Name" />
+                  <TextField fx:id="removePlayerTeam" layoutX="190.0" layoutY="468.0" prefHeight="26.0" prefWidth="150.0" promptText="Enter Team Name" />
+                  <TextField fx:id="removePlayerName" layoutX="190.0" layoutY="503.0" prefHeight="26.0" prefWidth="150.0" promptText="Enter Player Name" />
+                  <Button fx:id="topGoalscorers" layoutX="155.0" layoutY="300.0" mnemonicParsing="false" onAction="#showGoals" prefHeight="26.0" prefWidth="34.0" />
+                  <Button fx:id="possession" layoutX="194.0" layoutY="339.0" mnemonicParsing="false" onAction="#possesionpercent" prefHeight="26.0" prefWidth="33.0" />
+                  <Button fx:id="nooffouls" layoutX="138.0" layoutY="373.0" mnemonicParsing="false" onAction="#showFouls" prefHeight="26.0" prefWidth="33.0" />
+                  <Button fx:id="allPlayers" layoutX="211.0" layoutY="414.0" mnemonicParsing="false" onAction="#viewPlayers" prefHeight="26.0" prefWidth="33.0" />
+                  <Button fx:id="delete" layoutX="138.0" layoutY="468.0" mnemonicParsing="false" onAction="#removePlayer" prefHeight="26.0" prefWidth="33.0" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane>
+                    <children>
+                        <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="Details" textAlignment="CENTER" wrapText="false" />
+                  <TextArea fx:id="Details" layoutX="14.0" layoutY="76.0" prefHeight="255.0" prefWidth="292.0" />
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+        <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+            <children>
+                <Label fx:id="leftStatus" maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="Left status" HBox.hgrow="ALWAYS">
+                    <font>
+                        <Font size="11.0" fx:id="x3" />
+                    </font>
+                    <textFill>
+                        <Color red="0.625" green="0.625" blue="0.625" fx:id="x4" />
+                    </textFill>
+                </Label>
+                <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+                <Label fx:id="rightStatus" font="$x3" maxWidth="-1.0" text="Right status" textFill="$x4" HBox.hgrow="NEVER" />
+            </children>
+            <padding>
+                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+            </padding>
+        </HBox>
+    </children>
+</VBox>

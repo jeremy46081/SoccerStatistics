@@ -12,7 +12,7 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-        //File stats = new File(args[0]);
+
         launch(args);
 
     }

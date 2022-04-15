@@ -50,9 +50,5 @@ public class Teams {
 
     }
 
-    public void addTeam(ArrayList<String> Teams){
 
-
-
-    }
 }

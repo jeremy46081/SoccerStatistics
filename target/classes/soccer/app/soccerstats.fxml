@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
@@ -46,9 +47,6 @@
                             <font>
                                 <Font size="15.0" fx:id="x1" />
                             </font>
-                            <textFill>
-                                <Color red="0.624" green="0.624" blue="0.624" fx:id="x2" />
-                            </textFill>
                         </Label>
                   <Label alignment="CENTER" layoutX="19.0" layoutY="44.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Team Names" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
                      <font>
@@ -60,9 +58,6 @@
                      <font>
                         <Font size="15.0" fx:id="x12" />
                      </font>
-                     <textFill>
-                        <Color red="0.624" green="0.624" blue="0.624" fx:id="x22" />
-                     </textFill>
                   </Label>
                   <RadioButton fx:id="Player" layoutX="133.0" layoutY="112.0" mnemonicParsing="false" onAction="#addPlayer" />
                   <Label alignment="CENTER" layoutX="32.0" layoutY="146.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Name" textAlignment="CENTER" wrapText="false">
@@ -96,9 +91,6 @@
                      <font>
                         <Font size="15.0" fx:id="x121" />
                      </font>
-                     <textFill>
-                        <Color red="0.624" green="0.624" blue="0.624" fx:id="x221" />
-                     </textFill>
                   </Label>
                   <Label alignment="CENTER" layoutX="34.0" layoutY="302.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Top Goalscorer" textAlignment="CENTER" wrapText="false">
                      <font>
@@ -108,7 +100,6 @@
                         <Color red="0.624" green="0.624" blue="0.624" fx:id="x2211" />
                      </textFill>
                   </Label>
-                  <RadioButton fx:id="topGoalscorers" layoutX="170.0" layoutY="304.0" mnemonicParsing="false" onAction="#showGoals" />
                   <Label alignment="CENTER" layoutX="34.0" layoutY="342.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Possession Percentage" textAlignment="CENTER" wrapText="false">
                      <font>
                         <Font size="15.0" fx:id="x12111" />
@@ -117,7 +108,6 @@
                         <Color red="0.624" green="0.624" blue="0.624" fx:id="x22111" />
                      </textFill>
                   </Label>
-                  <RadioButton fx:id="possession" layoutX="208.0" layoutY="344.0" mnemonicParsing="false" onAction="#possesionpercent" />
                   <Label alignment="CENTER" layoutX="34.0" layoutY="376.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="No. of Fouls" textAlignment="CENTER" wrapText="false">
                      <font>
                         <Font size="15.0" fx:id="x121111" />
@@ -126,7 +116,6 @@
                         <Color red="0.624" green="0.624" blue="0.624" fx:id="x221111" />
                      </textFill>
                   </Label>
-                  <RadioButton fx:id="nooffouls" layoutX="133.0" layoutY="378.0" mnemonicParsing="false" onAction="#showFouls" />
                   <Label alignment="CENTER" layoutX="34.0" layoutY="417.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="View all Players of a Team" textAlignment="CENTER" wrapText="false">
                      <font>
                         <Font size="15.0" fx:id="x1211111" />
@@ -135,7 +124,6 @@
                         <Color red="0.624" green="0.624" blue="0.624" fx:id="x2211111" />
                      </textFill>
                   </Label>
-                  <RadioButton fx:id="allPlayers" layoutX="216.0" layoutY="419.0" mnemonicParsing="false" onAction="#viewPlayers" />
                   <Label alignment="CENTER" layoutX="34.0" layoutY="468.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Remove Player " textAlignment="CENTER" wrapText="false">
                      <font>
                         <Font size="15.0" fx:id="x1211112" />
@@ -144,7 +132,6 @@
                         <Color red="0.624" green="0.624" blue="0.624" fx:id="x2211112" />
                      </textFill>
                   </Label>
-                  <RadioButton fx:id="delete" layoutX="165.0" layoutY="473.0" mnemonicParsing="false" onAction="#removePlayer" />
                   <Label layoutX="13.0" layoutY="74.0" text="Posession minutes" textFill="#9f9f9f">
                      <font>
                         <Font size="15.0" />
@@ -174,16 +161,21 @@
                   <TextField fx:id="pTeam2" layoutX="328.0" layoutY="71.0" prefHeight="26.0" prefWidth="124.0" promptText="Enter Team 2" />
                   <TextField fx:id="foulsPlayer" layoutX="279.0" layoutY="143.0" prefHeight="26.0" prefWidth="150.0" promptText="Enter Player Name" />
                   <TextField fx:id="goalsPlayer" layoutX="279.0" layoutY="212.0" prefHeight="26.0" prefWidth="150.0" promptText="Enter Player Name" />
-                  <TextField fx:id="Teamposssession" layoutX="253.0" layoutY="339.0" prefHeight="26.0" prefWidth="150.0" promptText="Enter Team Name" />
+                  <TextField fx:id="Teamposssession" layoutX="239.0" layoutY="339.0" prefHeight="26.0" prefWidth="150.0" promptText="Enter Team Name" />
                   <TextField fx:id="foulsPlayerName" layoutX="204.0" layoutY="373.0" prefHeight="26.0" prefWidth="150.0" promptText="Enter Player Name" />
                   <TextField fx:id="allPlayersTeam" layoutX="253.0" layoutY="414.0" prefHeight="26.0" prefWidth="150.0" promptText="Enter Team Name" />
                   <TextField fx:id="removePlayerTeam" layoutX="190.0" layoutY="468.0" prefHeight="26.0" prefWidth="150.0" promptText="Enter Team Name" />
                   <TextField fx:id="removePlayerName" layoutX="190.0" layoutY="503.0" prefHeight="26.0" prefWidth="150.0" promptText="Enter Player Name" />
+                  <Button fx:id="topGoalscorers" layoutX="155.0" layoutY="300.0" mnemonicParsing="false" onAction="#showGoals" prefHeight="26.0" prefWidth="34.0" />
+                  <Button fx:id="possession" layoutX="194.0" layoutY="339.0" mnemonicParsing="false" onAction="#possesionpercent" prefHeight="26.0" prefWidth="33.0" />
+                  <Button fx:id="nooffouls" layoutX="138.0" layoutY="373.0" mnemonicParsing="false" onAction="#showFouls" prefHeight="26.0" prefWidth="33.0" />
+                  <Button fx:id="allPlayers" layoutX="211.0" layoutY="414.0" mnemonicParsing="false" onAction="#viewPlayers" prefHeight="26.0" prefWidth="33.0" />
+                  <Button fx:id="delete" layoutX="138.0" layoutY="468.0" mnemonicParsing="false" onAction="#removePlayer" prefHeight="26.0" prefWidth="33.0" />
                     </children>
                 </AnchorPane>
                 <AnchorPane>
                     <children>
-                        <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="Details" textAlignment="CENTER" textFill="$x2" wrapText="false" />
+                        <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="Details" textAlignment="CENTER" wrapText="false" />
                   <TextArea fx:id="Details" layoutX="14.0" layoutY="76.0" prefHeight="255.0" prefWidth="292.0" />
                     </children>
                 </AnchorPane>

@@ -36,15 +36,15 @@ public class Teams {
         if (Objects.equals(team, Teams.get(0))) {
             double e = (parseInt(minutes.get(0))) / 90.0;
             double a = (e) * 100;
-            return("\nPossession percentage of " + Teams.get(0) + " = " + Math.round(a) + "%");
+            return("Possession percentage of " + Teams.get(0) + " = " + Math.round(a) + "%");
 
         } else if (Objects.equals(team, Teams.get(1))) {
             double e = (parseInt(minutes.get(1))) / 90.0;
             double a = (e) * 100;
-            return("\nPossession percentage of " + Teams.get(1) + " = " + Math.round(a) + "%");
+            return("Possession percentage of " + Teams.get(1) + " = " + Math.round(a) + "%");
 
         } else {
-            return("\nTeam not found!");
+            return("Team not found!");
         }
 
 

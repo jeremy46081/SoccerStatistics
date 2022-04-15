@@ -1,7 +1,4 @@
-package soccer;
 
-import javafx.scene.control.Menu;
-import soccer.stats.Reader;
 
 import java.io.File;
 

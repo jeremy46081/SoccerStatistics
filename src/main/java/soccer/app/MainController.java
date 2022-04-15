@@ -122,8 +122,10 @@ public class MainController {
      * Loads an already existing file
      * @param event
      */
+
     @FXML
     void loadFile(ActionEvent event) {
+
         final FileChooser fileChooser = new FileChooser();
         fileChooser.setInitialDirectory(new File("."));
         File fileload=fileChooser.showOpenDialog(new Stage());
@@ -212,7 +214,7 @@ public class MainController {
             min.add(pTeam1.getText());
             min.add(pTeam2.getText());
 
-            Details.appendText(team.possession_percentage(teams, min, Teamposssession.getText()));
+            Details.setText(team.possession_percentage(teams, min, Teamposssession.getText()));
             leftStatus.setText("Possession percentage displayed!");
             rightStatus.setText(null);
         }

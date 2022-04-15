@@ -1,5 +1,4 @@
 package soccer.stats;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Objects;
@@ -48,8 +47,6 @@ public class PlayerStats {
             }
 
         }
-
-
         return("The top goal scorer is: " +highest+"\nNo. of Goals: "+Collections.frequency(Goals,highest ));
 
     }

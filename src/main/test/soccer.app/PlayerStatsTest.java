@@ -17,6 +17,7 @@ class PlayerStatsTest {
     /**
      * Test for highest goalscorer function
      */
+
     void highest_goal_scorer() {
         PlayerStats stats=new PlayerStats();
         ArrayList<String> Goals=new ArrayList<String>();

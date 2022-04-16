@@ -5,17 +5,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.File;
+
 import java.io.IOException;
 
 
 public class Main extends Application {
 
 
-    public void main(String[] args) {
-        if (args.length==1){
-            File stats = new File(args[0]);
-        }
+    void main(String[] args) {
+
 
         launch(args);
 

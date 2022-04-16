@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
+import java.io.File;
 import java.io.IOException;
 
 
@@ -14,7 +15,7 @@ public class Main extends Application {
 
     void main(String[] args) {
 
-
+        File stats= new File(args[0]);
         launch(args);
 
     }
